@@ -136,7 +136,7 @@ while r == 1 do
 
 			if Input == 2 then
 
-				print("166 lines of code!")
+				print("188 lines of code!")
 
 				Input = 0
 
@@ -159,22 +159,19 @@ while r == 1 do
 
 			if Input == 1 then
 				r=0
+				os.execute("exit")
 				break
 			end
 
 			if Input == 2 then
-				for i=1,100 do
-					print("")
-				end
+				os.execute("clear")
 				io.read()
 				break
 			end
 
 			if Input == 3 then
 				
-				for i=1,100 do
-					print("")
-				end
+				os.execute("exit")
 				Wait(1)
 				io.read()
 				io.read()
