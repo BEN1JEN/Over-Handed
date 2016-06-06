@@ -19,12 +19,12 @@ function Game(min,max)
 		end
 
 		if not (Guss == Ans) then
-			print("1 = Try agen")
+			print("1 = Try again")
 			TA = io.read("*n")
 		end
 
 		if not (TA == 1) then
-			print("Corect answar:",Ans)
+			print("Correct answar:",Ans)
 			break
 		end
 
@@ -84,10 +84,11 @@ function fileClient()
 	
 	io.write("\n")
 	print(os.execute("ls -lA files-V4.2")) --BTW DON'T use spaces
+
 	
-	while not command == exit do
+	while not command == "exit" do
 		
-		command = io.read("*all")
+		command = io.read("*line")
 		print(os.execute(command))
 		
 	end
@@ -102,7 +103,7 @@ while r == 1 do
 	print("Hello,")
 	Wait(1)
 	print("press enter to")
-	print("contenue.")
+	print("continue.")
 	io.read()
 
 	while true do
