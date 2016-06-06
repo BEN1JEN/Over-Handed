@@ -97,7 +97,7 @@ function fileClient()
 		command = io.read("*line")
 
     if command == "ls" then
-		  os.execute("ls -Ah files-V4.3/" .. dir)
+		  os.execute("ls -Ah files/" .. dir)
     end
 
 	  if string.sub(command, 1, 2) == "cd" then
@@ -110,7 +110,7 @@ end
 
 function appStore()
 
-	print(os.execute("ls -h apps-V4.3"))
+	print(os.execute("ls -h apps"))
 
 end
 
