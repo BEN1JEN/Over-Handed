@@ -196,6 +196,9 @@ while r == 1 do
         local usernm = io.read("*line")
         io.write("Password")
         local passwd = io.read("*line")
+
+        users[userCount + 1] = usernm
+        passwords[userCount + 1] = passwd
       end
 
 		end
@@ -239,6 +242,18 @@ while r == 1 do
 				io.read()
 
 			end
+
+      if Input == 4 then
+
+        for i = 1, userCount do
+          io.write(i .. ":" .. users[i] .. "\n")
+        end
+
+        Input = io.read("*n")
+
+        USER = users[Input]
+
+      end
 
 		end
 
