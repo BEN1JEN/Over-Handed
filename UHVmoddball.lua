@@ -79,6 +79,13 @@ function Calculate()
 	Input = 0
 
 end
+
+function fileClient() 
+
+	print(os.execute("ls -lA files-V4.2")) --BTW DON'T use spaces
+
+end
+
 r=1
 while r == 1 do
 
@@ -87,6 +94,7 @@ while r == 1 do
 	print("press enter to")
 	print("contenue.")
 	io.read()
+
 	while true do
 
 		print("1:Launch")
@@ -136,7 +144,7 @@ while r == 1 do
 
 			if Input == 2 then
 
-				print("188 lines of code!")
+				print("198 lines of code!")
 
 				Input = 0
 
@@ -145,8 +153,9 @@ while r == 1 do
 		end
 
 		if Input == 3 then
-			print("N/A")
-			print("")
+
+			fileClient()
+
 		end
 
 		if Input == 4 then
@@ -158,15 +167,19 @@ while r == 1 do
 			Input = io.read("*n")
 
 			if Input == 1 then
+
 				r=0
 				os.execute("exit")
 				break
+
 			end
 
 			if Input == 2 then
+
 				os.execute("clear")
 				io.read()
 				break
+
 			end
 
 			if Input == 3 then
