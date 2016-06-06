@@ -12,7 +12,7 @@ function Game(min,max)
 		print("Guess the Number betwen")
 		print(min,"and",max)
 		Ans = math.random(min,max)
-		Guss = io.read("*n")
+		Guss = io.rewad("*n")
 		if Guss == Ans then
 			print("You win!")
 			break
@@ -46,7 +46,7 @@ function Game(min,max)
 end
 
 function Calculate()
-	
+
 	print("1st number")
 	one = io.read("*n")
 	print("Symbol")
@@ -80,24 +80,23 @@ function Calculate()
 
 end
 
-function fileClient() 
-	
-	io.write("\n")
-	print(os.execute("ls -lA files-V4.2")) --BTW DON'T use spaces
+function fileClient()
 
-	
+	os.execute("clear")
+	print(os.execute("ls -A files-V4.3 | grep .")) --BTW DON'T use spaces
+
 	while not (command == "exit") do
-		
+
 		command = io.read("*line")
 		print(os.execute(command))
-		
+
 	end
 
 end
 
-function appStore
+function appStore()
 
-	--Code
+	print(os.execute("ls -A apps-V4.3 | grep .lua"))
 
 end
 
@@ -106,6 +105,7 @@ command = 0
 
 while r == 1 do
 
+  os.execute("clear")
 	print("Hello,")
 	Wait(1)
 	print("press enter to")
@@ -207,7 +207,7 @@ while r == 1 do
 			end
 
 			if Input == 3 then
-				
+
 				os.execute("clear")
 				Wait(1)
 				io.read()
