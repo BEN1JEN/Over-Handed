@@ -226,6 +226,12 @@ while r == 1 do
         passwords[userNum] = passwordTMP
         print("password changed to:" .. passwords[userNum])
 
+        Wait(1)
+
+        os.execute("clear")
+
+        Input == 0
+
       end
 
 		end
