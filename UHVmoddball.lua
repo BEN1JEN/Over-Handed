@@ -185,20 +185,22 @@ while r == 1 do
 
 			if Input == 2 then
 
-				print("207 lines of code!")
+				print("this program was writen compoletoly by ben1jen,\nit has 265 lines of code")
 
 				Input = 0
 
 			end
 
       if Input == 3 then
+
         io.write("username:")
         local usernm = io.read("*line")
-        io.write("Password")
+        io.write("Password:")
         local passwd = io.read("*line")
 
         users[userCount + 1] = usernm
         passwords[userCount + 1] = passwd
+
       end
 
 		end
