@@ -86,7 +86,7 @@ function fileClient()
 	print(os.execute("ls -lA files-V4.2")) --BTW DON'T use spaces
 
 	
-	while not command == "exit" do
+	while not (command == "exit") do
 		
 		command = io.read("*line")
 		print(os.execute(command))
