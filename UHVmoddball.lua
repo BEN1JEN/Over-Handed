@@ -264,7 +264,13 @@ while r == 1 do
 
         Input = io.read("*n")
 
-        user = users[Input]
+        io.read("*line") -- reset io.read
+        local passwordTMP = io.read("*line")
+        if passwordTMP == passwords[Input] then
+          user = users[Input]
+        else
+          print("PASSWORD INCORRECT")
+        end
 
       end
 
