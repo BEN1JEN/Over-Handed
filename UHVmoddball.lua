@@ -81,12 +81,13 @@ function Calculate()
 end
 
 function fileClient() 
-
+	
+	io.write("\n")
 	print(os.execute("ls -lA files-V4.2")) --BTW DON'T use spaces
 	
 	while not command == exit do
 		
-		command = io.read()
+		command = io.read("*all")
 		print(os.execute(command))
 		
 	end
