@@ -82,16 +82,22 @@ end
 
 function fileClient()
 
+  local command = 0
+  local dir = "/"
+
 	os.execute("clear")
-	print(os.execute("ls -A files-V4.3")) --BTW DON'T use spaces
+  --BTW DON'T use spaces in file names
+
+  io.read("*line") -- reset io.read
 
 	while not (command == "exit") do
 
     io.write("\n" .. user .. "@" .. dir .. " $:")
+
 		command = io.read("*line")
 
-    if command == ls then
-		  os.execute("ls -A files-V4.3/" .. dir)
+    if command == "ls" then
+		  os.execute("ls -Ah files-V4.3/" .. dir)
     end
 
 	  if string.sub(command, 1, 2) == "cd" then
@@ -110,8 +116,7 @@ end
 
 user = "root"
 r = 1
-command = 0
-dir = ""
+
 users = {}
 passwords = {}
 userCount = 1
@@ -140,7 +145,7 @@ while r == 1 do
 
 			print("1:Calculator")
 			print("2:Guess")
-			print("3:App Store")
+			--print("3:App Store")
 			print("0:back")
 			Input = io.read("*n")
 
@@ -158,11 +163,11 @@ while r == 1 do
 				Game(1,10)
 			end
 
-			if Input == 3 then
+			--if Input == 3 then
 
-				appStore()
+			--	appStore()
 
-			end
+			--end
 
 		end
 
@@ -185,13 +190,15 @@ while r == 1 do
 
 			if Input == 2 then
 
-				print("this program was writen compoletoly by ben1jen,\nit has 265 lines of code")
+				print("this program was writen compoletoly by ben1jen,\nit has 274 lines of code.")
 
 				Input = 0
 
 			end
 
       if Input == 3 then
+
+        io.read("*line") -- reset io.read
 
         io.write("username:")
         local usernm = io.read("*line")
@@ -200,6 +207,8 @@ while r == 1 do
 
         users[userCount + 1] = usernm
         passwords[userCount + 1] = passwd
+
+        userCount = userCount + 1
 
       end
 
@@ -240,7 +249,7 @@ while r == 1 do
 
 				os.execute("clear")
 				Wait(1)
-				io.read()
+				io.read() -- reset io.read
 				io.read()
 
 			end
@@ -253,7 +262,7 @@ while r == 1 do
 
         Input = io.read("*n")
 
-        USER = users[Input]
+        user = users[Input]
 
       end
 
