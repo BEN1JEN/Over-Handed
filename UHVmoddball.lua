@@ -83,7 +83,7 @@ end
 function fileClient() 
 	
 	io.write("\n")
-	print(os.execute("ls -lA files-V4.2")) --BTW DON'T use spaces
+	print(os.execute("ls -lA files")) --BTW DON'T use spaces
 
 	
 	while not (command == "exit") do
