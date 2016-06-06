@@ -83,10 +83,19 @@ end
 function fileClient() 
 
 	print(os.execute("ls -lA files-V4.2")) --BTW DON'T use spaces
+	
+	while not command == exit do
+		
+		command = io.read()
+		print(os.execute(command))
+		
+	end
 
 end
 
-r=1
+r = 1
+command = 0
+
 while r == 1 do
 
 	print("Hello,")
@@ -144,7 +153,7 @@ while r == 1 do
 
 			if Input == 2 then
 
-				print("198 lines of code!")
+				print("207 lines of code!")
 
 				Input = 0
 
@@ -169,7 +178,7 @@ while r == 1 do
 			if Input == 1 then
 
 				r=0
-				os.execute("exit")
+				os.execute("clear")
 				break
 
 			end
@@ -184,7 +193,7 @@ while r == 1 do
 
 			if Input == 3 then
 				
-				os.execute("exit")
+				os.execute("clear")
 				Wait(1)
 				io.read()
 				io.read()
