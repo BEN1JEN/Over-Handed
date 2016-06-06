@@ -176,6 +176,7 @@ while r == 1 do
 			print("1:Time")
 			print("2:Info")
       print("3:New user")
+      print("4:Change password")
 			print("0:back")
 			Input = io.read("*n")
 
@@ -211,6 +212,18 @@ while r == 1 do
         userCount = userCount + 1
 
         Input = 0
+
+      end
+
+      if Input == 4 then
+
+        io.read("*line") -- reset io.read
+
+        io.write("New password:")
+        local passwordTMP = io.read("*line")
+
+        passwords[userNum] = passwordTMP
+        print("password changed to:" .. passwords[userNum])
 
       end
 
@@ -262,12 +275,15 @@ while r == 1 do
           io.write(i .. ":" .. users[i] .. "\n")
         end
 
-        Input = io.read("*n")
+        userNum = io.read("*n")
 
         io.read("*line") -- reset io.read
+
+        io.write("Password:")
         local passwordTMP = io.read("*line")
+
         if passwordTMP == passwords[Input] then
-          user = users[Input]
+          user = users[userNum]
         else
           print("PASSWORD INCORRECT")
         end
