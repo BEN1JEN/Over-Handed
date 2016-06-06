@@ -114,6 +114,7 @@ function appStore()
 
 end
 
+userNum = 1
 user = "root"
 r = 1
 
