@@ -83,7 +83,7 @@ end
 function fileClient() 
 	
 	io.write("\n")
-	print(os.execute("ls -lA files")) --BTW DON'T use spaces
+	print(os.execute("ls -lA files-V4.2")) --BTW DON'T use spaces
 
 	
 	while not (command == "exit") do
@@ -92,6 +92,12 @@ function fileClient()
 		print(os.execute(command))
 		
 	end
+
+end
+
+function appStore
+
+	--Code
 
 end
 
@@ -118,6 +124,7 @@ while r == 1 do
 
 			print("1:Calculator")
 			print("2:Guess")
+			print("3:App Store")
 			print("0:back")
 			Input = io.read("*n")
 
@@ -133,6 +140,12 @@ while r == 1 do
 				print("Game:")
 				print("")
 				Game(1,10)
+			end
+
+			if Input == 3 then
+
+				appStore()
+
 			end
 
 		end
