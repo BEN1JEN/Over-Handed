@@ -83,12 +83,20 @@ end
 function fileClient()
 
 	os.execute("clear")
-	print(os.execute("ls -A files-V4.3 | grep .")) --BTW DON'T use spaces
+	print(os.execute("ls -A files-V4.3")) --BTW DON'T use spaces
 
 	while not (command == "exit") do
 
+    io.write("\n" .. user .. "@" .. dir .. " $:")
 		command = io.read("*line")
-		print(os.execute(command))
+
+    if command == ls then
+		  os.execute("ls -A files-V4.3/" .. dir)
+    end
+
+	  if string.sub(command, 1, 2) == "cd" then
+      dir = string.sub(command, 3, string.len(command))
+    end
 
 	end
 
@@ -96,12 +104,20 @@ end
 
 function appStore()
 
-	print(os.execute("ls -A apps-V4.3 | grep .lua"))
+	print(os.execute("ls -h apps-V4.3"))
 
 end
 
+user = "root"
 r = 1
 command = 0
+dir = ""
+users = {}
+passwords = {}
+userCount = 1
+
+users[1] = "root"
+passwords[1] = "password"
 
 while r == 1 do
 
@@ -154,6 +170,7 @@ while r == 1 do
 
 			print("1:Time")
 			print("2:Info")
+      print("3:New user")
 			print("0:back")
 			Input = io.read("*n")
 
@@ -174,6 +191,13 @@ while r == 1 do
 
 			end
 
+      if Input == 3 then
+        io.write("username:")
+        local usernm = io.read("*line")
+        io.write("Password")
+        local passwd = io.read("*line")
+      end
+
 		end
 
 		if Input == 3 then
@@ -187,6 +211,7 @@ while r == 1 do
 			print("1:Shutdown")
 			print("2:Reboot")
 			print("3:Sleep")
+      print("4:Logout")
 			print("0:back")
 			Input = io.read("*n")
 
