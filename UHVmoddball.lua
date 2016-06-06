@@ -12,7 +12,7 @@ function Game(min,max)
 		print("Guess the Number betwen")
 		print(min,"and",max)
 		Ans = math.random(min,max)
-		Guss = io.rewad("*n")
+    Guss = io.read("*n")
 		if Guss == Ans then
 			print("You win!")
 			break
@@ -101,7 +101,7 @@ function fileClient()
     end
 
 	  if string.sub(command, 1, 2) == "cd" then
-      dir = string.sub(command, 3, string.len(command))
+      dir = string.sub(command, 4, string.len(command))
     end
 
 	end
@@ -209,6 +209,8 @@ while r == 1 do
         passwords[userCount + 1] = passwd
 
         userCount = userCount + 1
+
+        Input = 0
 
       end
 
